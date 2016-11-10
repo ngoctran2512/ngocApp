@@ -7,4 +7,12 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: flase }
         has_secure_password
     validates :password, presence: true, length: { minimum: 6 }    
+     def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+   # Forgets a user.
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 end

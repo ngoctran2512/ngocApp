@@ -39,5 +39,9 @@ end
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
+   # Forgets a user.
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 end
 
