@@ -5,7 +5,7 @@
 
 body {
   padding-top: 60px;
- /* background-image: image-url('co1.jpg');*/
+
 }
 
 section {
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 5em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
@@ -74,11 +74,11 @@ footer {
 }
 
 footer a {
-  color: #555;
+  color: blue;
 }
 
 footer a:hover {
-  color: #222;
+  color: red;
 }
 
 footer small {
@@ -101,6 +101,7 @@ footer ul li {
   ul {
     color: red;
     margin: 0 0 30px 0;
+
   }
 }
 
@@ -252,4 +253,50 @@ span.picture {
   input {
     border: 0;
   }
+}
+gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+
+.stats {
+  overflow: auto;
+  margin-top: 0;
+  padding: 0;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $gray-lighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+  a {
+    padding: 0;
+  }
+}
+
+.users.follow {
+  padding: 0;
 }

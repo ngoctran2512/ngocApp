@@ -1,0 +1,4 @@
+<div class="container">
+<h2><%= @micropost.content %></h2>
+ <img> <center><%= image_tag @micropost.picture.url, class: "img-rounded" if @micropost.picture? %></center> </img>
+ </div>
