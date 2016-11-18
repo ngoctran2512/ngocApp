@@ -16,7 +16,7 @@ resources :users do
       get :following, :followers
     end
   end
-  
+  resources :comments
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
