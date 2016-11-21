@@ -1,24 +1,30 @@
-User.create!(name:  "Example User",
-             email: "ngoc9@gmail.com",
-             password:              "foobar",
-             password_confirmation: "foobar",
-             admin: true
-          )
+User.create!(name:  "ngoc",
+             email: "ngoctran@gmail.com",
+             password:              "abc123",
+             password_confirmation: "abc123",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
 
 99.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "password"
-  User.create!(name:  name,
-               email: email,
-               password:              password,
-               password_confirmation: password
-               )
-  users = User.order(:created_at).take(6)
+  User.create!(name: name,
+              email: email,
+              password:              password,
+              password_confirmation: password,
+              activated: true,
+              activated_at: Time.zone.now)
+end
+
+# Microposts
+users = User.order(:created_at).take(6)
 50.times do
   content = Faker::Lorem.sentence(5)
   users.each { |user| user.microposts.create!(content: content) }
 end
+
 # Following relationships
 users = User.all
 user  = users.first

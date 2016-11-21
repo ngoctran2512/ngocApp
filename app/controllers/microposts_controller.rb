@@ -13,10 +13,8 @@ class MicropostsController < ApplicationController
      render 'static_pages/home'
    end
   end
-
   #def show
    # @micropost = Micropost.find(params[:id])
-    
   #end
   def index
     @microposts = Micropost.paginate(page: params[:page], per_page: 5)
@@ -29,7 +27,6 @@ class MicropostsController < ApplicationController
     flash[:success] = "Micropost deleted"
     redirect_to request.referrer || root_url
    end
-
   private
 
     def micropost_params

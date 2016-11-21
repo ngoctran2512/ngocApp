@@ -90,12 +90,5 @@ def follow(other_user)
   def following?(other_user)
     following.include?(other_user)
   end
-   # Converts email to all lower-case.
-    
-   # Creates and assigns the activation token and digest.
-    
- 
-
-  
 end
 

@@ -17,9 +17,6 @@
       render "shared/_comment_form"
     end
   end
-
- 
-
    private
 
     def comment_params
