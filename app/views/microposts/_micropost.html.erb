@@ -13,3 +13,15 @@
     <% end %>
   </span>
 </li>
+<% if logged_in? %>
+    
+     <%= link_to "comment", micropost_path(micropost)%>
+   <% else%>
+     <%= link_to "view comment", micropost_path(micropost)  %>  
+        
+    <%end %>
+
+
+  </li>
+
+</li>
