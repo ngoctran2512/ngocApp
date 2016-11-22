@@ -1,3 +1,16 @@
+<% if !current_user.nil? %>
+  <%= form_for(Micropost.new) do |f| %>
+    <%= render "shared/error_messages", object: f.object %>
+    <div class="field">
+      <%= f.text_area :content, placeholder: "Compose new micropost..." %>
+    </div>
+    <%= f.submit "Post", class: "btn btn-primary" %>
+    <span class="picture">
+      <%= f.file_field :picture, accept: "image/jpeg,image/gif,image/png" %>
+    </span>
+  <% end %>
+<% end %>
+
 <li id="micropost-<%= micropost.id %>">
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
